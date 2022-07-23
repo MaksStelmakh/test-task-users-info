@@ -1,15 +1,20 @@
 import { Outlet } from "react-router-dom";
 import SideBar from "../Sidebar/SideBar";
+import { NavBar, ContentContainer } from "./Layout.styled";
+import Logo from "../Logo/Logo";
+import Header from "../Header/Header";
 
 const Layout = () => {
   return (
     <>
-      <div>
+      <NavBar>
+        <Logo />
         <SideBar />
-      </div>
-      <div>
+      </NavBar>
+      <ContentContainer>
+        <Header />
         <Outlet />
-      </div>
+      </ContentContainer>
     </>
   );
 };
