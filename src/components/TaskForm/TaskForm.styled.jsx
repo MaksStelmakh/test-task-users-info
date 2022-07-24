@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import chekbox from "../../images/check.svg";
 
 export const TasksContainer = styled.div`
   width: 534px;
@@ -118,7 +119,54 @@ export const TasksList = styled.ul`
       line-height: 20px;
       letter-spacing: 0.2px;
       color: #252733;
-      margin-left: 16px;
+      margin-left: 50px;
+      display: block;
+      position: relative;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+      }
+      input:checked ~ span {
+        background-color: #2196f3;
+        border: 2px solid #2196f3;
+      }
+      span {
+        position: absolute;
+        top: -1px;
+        left: -45px;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        background-color: inherit;
+        border: 2px solid #c5c7cd;
+
+        &:after {
+          content: "";
+          position: absolute;
+          display: none;
+        }
+      }
+    }
+    label input:checked ~ span:after {
+      display: block;
+    }
+    label span:after {
+      left: 7px;
+      top: 2px;
+      width: 5px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
     }
   }
 `;

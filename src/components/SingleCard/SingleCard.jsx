@@ -18,7 +18,6 @@ const SingleCard = () => {
   useEffect(() => {
     getUserById(id).then((user) => setOneUser(user));
   }, [id]);
-  // const { name, company, phone, website, address } = oneUser;
   return (
     <SingleContainer>
       <StatusUsers />

@@ -39,13 +39,15 @@ const TaskForm = () => {
             return (
               <li key={task.name}>
                 <div>
-                  <input
-                    type="checkbox"
-                    id="color-1"
-                    name="color-1"
-                    value="indigo"
-                  />
-                  <label>{task.name}</label>
+                  <label>
+                    {task.name}
+                    <input
+                      type="checkbox"
+                      name="checkbox"
+                      value="agree"
+                    ></input>
+                    <span></span>
+                  </label>
                 </div>
                 <TaskStatus color={task.stage}>{task.stage}</TaskStatus>
               </li>
